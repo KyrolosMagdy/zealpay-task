@@ -1,9 +1,10 @@
 import React from 'react';
+import CardComponent from '../../components/card/CardComponent';
 
 const QuestionsScreen = (): React.ReactElement => {
   return (
     <div>
-      <h1>Hello to the Questions Screen</h1>
+      <CardComponent />
     </div>
   );
 };

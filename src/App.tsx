@@ -1,14 +1,23 @@
 import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { theme } from './theme';
+import QuestionsScreen from './pages/questions';
+import ResultsScreen from './pages/results/results';
 
 import './App.css';
-import { theme } from './theme';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">Main Application</div>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path="/" element={<QuestionsScreen />} />
+          <Route path="/results" element={<ResultsScreen />} />
+        </Routes>
+      </ThemeProvider>
+    </Router>
   );
 }
 
